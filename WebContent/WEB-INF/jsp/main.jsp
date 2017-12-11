@@ -2,11 +2,12 @@
 <html>
 <head>
 <title>Fuel Filling</title>
+<%@ page isELIgnored="false" %>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <link href="<c:url value="/resources/css/fuelFilling.css" />" rel="stylesheet">
-<script src="<c:url value="/resources/script/fuelFilling.js" />"></script>
+<script src="<c:url value="/resources/script/fuelFilling1.js" />"></script>
 </head>
 <body>
 <body class="bodyClass">
