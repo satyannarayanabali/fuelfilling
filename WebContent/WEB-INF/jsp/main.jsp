@@ -1,20 +1,28 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 <title>Fuel Filling</title>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<link href="<c:url value="/resources/css/fuelFilling.css" />" rel="stylesheet">
+<script src="<c:url value="/resources/script/fuelFilling.js" />"></script>
 </head>
+<body>
 <body class="bodyClass">
 
 	<table style="width: 700px; height: 400px; background-color: #2176A8;">
 		<tr>
-			<td><img src="/images//ibotrics.jpeg"></td>
+			<td colspan="5"><img src="<c:url value="/resources/images/ibotrics.jpeg"/>" width="700px" height="150px">
+		</td>
 		</tr>
 		<tr>
 			<td width="200px"></td>
+			<td width="100px"></td>
+			<td width="100px"></td>
 			<td width="200px"></td>
-			<td align="right" width="200px"><select id="sessionId">
+			<td align="right" width="100px"><select id="sessionId"
+				onchange="doAjaxGet();">
 					<option value="0">Select</option>
 					<option value="1">Fuel Filling - 01</option>
 					<option value="2">Fuel Filling - 02</option>
@@ -22,67 +30,23 @@
 					<option value="4">Fuel Filling - 04</option>
 
 			</select></td>
-			<td width="100px"></td>
 		</tr>
 		<tr>
 			<td width="200px"></td>
-			<td colspan="2" align="center">
-				<h1>
-					<label style="color: white; font-weight: bold;">Fuel
-						Filling</label>
-				</h1>
+			<td colspan="3" align="center">
+			<div style="color: white; font-weight: bold;font-size: 24px;" id="titleId">
+					Fuel Filling
+				</div>
 			</td>
+			<td width="200px"></td>
 		</tr>
-
-
-		<tr>
-			<td></td>
-			<td colspan="2" align="center">
-				<div id="divFuelFilling1">
-					<jsp:include page="/WEB-INF/jsp/fuelfilling1.jsp"></jsp:include>
-				</div>
-				<div id="divFuelFilling2">
-					<jsp:include page="/WEB-INF/jsp/fuelfilling2.jsp"></jsp:include>
-				</div>
-				<div id="divFuelFilling3">
-					<jsp:include page="/WEB-INF/jsp/fuelfilling3.jsp"></jsp:include>
-				</div>
-				<div id="divFuelFilling4">
-					<jsp:include page="/WEB-INF/jsp/fuelfilling4.jsp"></jsp:include>
+		<tr id="trID">
+			<td colspan="5" align="center">
+				<div id="divFuelFilling" style="height: 250px">
 				</div>
 			</td>
-			<td></td>
 		</tr>
 	</table>
 
 </body>
 </html>
-<script>
-$("#divFuelFilling1").hide();
-$("#divFuelFilling2").hide();
-$("#divFuelFilling3").hide();
-$("#divFuelFilling4").hide();
-
-	$(function() {
-		$("#sessionId").change(function() {
-			var selectedVal = $("#sessionId").val();
-
-			alert(selectedVal);
-			var formData = {
-
-			}
-
-			$.ajax({
-				type : "GET",
-				contentType : "application/json",
-				url : "/fuelFilling"+selectedVal,
-				dataType : 'json',
-				success : function(response) {
-					$("#divFuelFilling"+selectedVal).html(response);
-					$("#divFuelFilling"+selectedVal).show();
-				}
-			});
-
-		});
-	});
-</script>

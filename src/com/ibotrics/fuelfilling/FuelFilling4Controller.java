@@ -6,9 +6,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class FuelFilling4Controller {
-	@RequestMapping(value="/fuelfilling4",method = RequestMethod.GET)
-	public String home() {
-		
-		return "fuelfilling4";
+	@RequestMapping(value="/fuelFilling4",method = RequestMethod.GET)
+	public String getFuelFilling4Page() {
+		return "fuelFilling4";
 	}
 }
