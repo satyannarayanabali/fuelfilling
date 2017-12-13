@@ -3,9 +3,9 @@ function doAjaxGet() {
 		var sessionId = $('#sessionId').val();
 		if(sessionId == 0){
 			$('#titleId').html("Fuel Filling");
-			$('#divFuelFilling').html('');
+			$('#divFuelFilling').html("Welcome to Fuel Filling sessions");
 		}else{
-			$('#titleId').html("Fuel Filling - "+sessionId);
+			$('#titleId').html("Session "+sessionId+" - Fuel Filling");
 			$.ajax({
 				type : "GET",
 				url : "fuelFilling" + sessionId,

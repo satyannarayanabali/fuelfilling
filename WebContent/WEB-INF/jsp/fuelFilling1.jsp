@@ -1,23 +1,32 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <table>
+<tr>
+		<td align="left"><label style="color:red;">**No of fillings should not exceed 10
+		</label></td>
+		<td></td></tr>
+<tr>
+		<td></td>
+		<td></td>
+		<td align="right"><button onclick="doUpdateAjax()">Add Next</button></td>
+		</tr>
 	<tr>
 		<td align="right"><label>Previous Reading :</label></td>
-		<td align="left"><label><c:out value="${fuelFilling1.previousReading}"/></label></td>
+		<td align="left"><label>0.0</label></td>
 	</tr>
 	<tr>
 		<td align="right"><label>Present Reading : </label></td>
-		<td><input type="text" id="presentReadingId"/></td>
+		<td><input type="text" id="presentReadingId" value="0.0"/></td>
 	</tr>
 	<tr>
 		<td align="right"><label>Distance Traveled : </label></td>
-		<td><label><c:out value="${fuelFilling1.distanceTravelled}"/></label></td>
+		<td><label>0.0</label></td>
 	</tr>
 	<tr>
 		<td align="right"><label>Fuel Filled : </label></td>
-		<td><input type="text" id="fuelFilledId"/></td>
+		<td><input type="text" id="fuelFilledId" value="0.0"/></td>
 	</tr>
 	<tr>
-		<td colspan="2">
+		<td colspan="3" align="center">
 			<table>
 				<tr>
 				<td><button onclick="doUpdateAjax()">Update</button></td>
@@ -31,22 +40,22 @@
 	</tr>
 	<tr>
 		<td align="right"><label>Total Fillings : </label></td>
-		<td><label><c:out value="${fuelFilling1.totalFilling}"/></label></td>
+		<td><label>0</label></td>
 	</tr>
 	<tr>
 		<td align="right"><label>Total Fuel Filled : </label></td>
-		<td><label><c:out value="${fuelFilling1.totalFuelFilled}"/></label></td>
+		<td><label>0.0</label></td>
 	</tr>
 	<tr>
 		<td align="right"><label>Total Distance Traveled : </label></td>
-		<td align="left"><c:out value="${fuelFilling1.totalDistanceTravelled}"/></td>
+		<td align="left">0.0</td>
 	</tr>
 	<tr>
 		<td align="right"> <label>Mileage : </label></td>
-		<td><label><c:out value="${fuelFilling1.mileage}"/></label></td>
+		<td><label>0.0</label></td>
 	</tr>
 	<tr>
 		<td align="right"><label>Average Mileage : </label></td>
-		<td align="left"><label><c:out value="${fuelFilling1.avgMileage}"/></label></td>
+		<td align="left"><label>0.0</label></td>
 	</tr>
 </table>

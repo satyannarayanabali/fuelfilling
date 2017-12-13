@@ -4,15 +4,15 @@
 <title>Fuel Filling</title>
 <%@ page isELIgnored="false" %>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="<c:url value="/resources/css/fuelFilling.css" />" rel="stylesheet">
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<link href="<c:url value="/resources/css/fuelFilling.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/script/fuelFilling1.js" />"></script>
 </head>
 <body>
 <body class="bodyClass">
 
-	<table style="width: 700px; height: 400px; background-color: #2176A8;">
+	<table class="mainTable">
 		<tr>
 			<td colspan="5"><img src="<c:url value="/resources/images/ibotrics.jpeg"/>" width="700px" height="150px">
 		</td>
@@ -22,7 +22,8 @@
 			<td width="100px"></td>
 			<td width="100px"></td>
 			<td width="200px"></td>
-			<td align="right" width="100px"><select id="sessionId"
+			<td align="right" width="100px">
+			<select id="sessionId"
 				onchange="doAjaxGet();">
 					<option value="0">Select</option>
 					<option value="1">Fuel Filling - 01</option>
@@ -35,15 +36,17 @@
 		<tr>
 			<td width="200px"></td>
 			<td colspan="3" align="center">
-			<div style="color: white; font-weight: bold;font-size: 24px;" id="titleId">
+			<div id="titleId" class="headerTitle">
 					Fuel Filling
 				</div>
 			</td>
 			<td width="200px"></td>
 		</tr>
+		
 		<tr id="trID">
 			<td colspan="5" align="center">
-				<div id="divFuelFilling" style="height: 250px">
+				<div id="divFuelFilling" style="height: 350px">
+				Welcome to Fuel Filling sessions
 				</div>
 			</td>
 		</tr>
